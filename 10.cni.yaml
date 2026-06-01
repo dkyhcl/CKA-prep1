@@ -1,0 +1,17 @@
+# k apply -f https://github.com/flannel-io/flannel/releases/download/v0.26.1/kube-flannel.yml
+
+#k get pod -n kube-flannel
+#k logs <pod-name> -n kube-flannel
+
+#k get cm -n kube-flannel
+#k edit cm kube-flannel-cfg -n kube-flannel
+
+#Modify the net-conf.json file to set the network to:
+#net-conf.json
+#Network: 192.168.0.0/16
+
+# kubectl run test1 --image=busybox --restart=Never -- sleep 3600
+# kubectl run test2 --image=busybox --restart=Never -- sleep 3600
+
+# kubectl get pod test2 -o wide
+#kubectl exec test1 -- ping -c 4 <2-pod-ip>

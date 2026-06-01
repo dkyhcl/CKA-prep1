@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-port-deployment
+  namespace: relative
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-port-deployment
+  template:
+    metadata:
+      labels:
+        app: node-port-deployment
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+
+---
+# - Edit the deployment nginx and add container port
+containers:
+  - name: nginx
+    image: nginx
+    ports:
+      - containerPort: 80
+
+---
+# Create svc file
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service
+  namespace: relative
+spec:
+  type: NodePort
+  selector:
+    app: node-port-deployment
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP

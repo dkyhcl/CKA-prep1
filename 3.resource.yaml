@@ -1,0 +1,2 @@
+# k edit deploy wordpress for both contianer
+# -> Modify the cpu & memory as per node resource availabilty and also keep some buffer for other pods to run

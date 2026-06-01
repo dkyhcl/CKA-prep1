@@ -1,0 +1,6 @@
+# kubectl get crds | grep cert-manager  > ~/resource.yaml
+
+# k explain certificates.spec.subject
+
+# k get crds | grep cert-manager > ~/resource.yaml
+# k explain certificates.spec.subject > ~/subject.yaml

@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:latest
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-svc
+  namespace: wordpress
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+  ports:
+    - port: 80
+      targetPort: 80
+
+
+# Sidecar added
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      volumes:
+        - name: log-volume
+          emptyDir: {}
+
+      containers:
+        - name: wordpress
+          image: wordpress:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: log-volume
+              mountPath: /var/log
+
+        - name: log-sidecar
+          image: busybox:stable
+          command:
+            - /bin/sh
+            - -c
+            - touch /var/log/wordpress.log && tail -f /var/log/wordpress.log
+          volumeMounts:
+            - name: log-volume
+              mountPath: /var/log
+
+# Check sidecar logs
+# kubectl logs -n wordpress wordpress-7549bffb95-snw6n -c log-sidecar
+
+# Create a test log entry in wordpress container
+# kubectl exec -n wordpress wordpress-7549bffb95-snw6n -c wordpress -- sh -c 'echo "TEST LOG ENTRY" >> /var/log/wordpress.log'
+
+# Check sidecar logs
+# kubectl logs -n wordpress wordpress-7549bffb95-snw6n -c log-sidecar

@@ -1,0 +1,14 @@
+# Add ArgoCD Helm Repo and Install ArgoCD
+# helm repo add argo https://argoproj.github.io/argo-helm
+
+# Update Helm Repositories
+# helm repo update
+
+# Search for ArgoCD Helm Chart and its versions
+# helm search repo argo/argo-cd --version 7.7.3
+
+# Install ArgoCD using Helm with specific version and without installing CRDs
+# helm template argocd argo/argo-cd -n argocd --version 7.7.3 --set crds.install=false > /argo-helm.yaml
+
+# Apply the generated ArgoCD manifest to the Kubernetes cluster
+# k apply -f argo-helm.yaml

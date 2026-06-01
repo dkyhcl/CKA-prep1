@@ -1,0 +1,24 @@
+k get nodes
+
+ls /etc/kubernetes/manifests/
+
+crictl ps -a | grep kube-apiserver
+
+crictl logs <container-id>
+
+rm /etc/kubernetes/manifests/kube-apiserver.yaml
+
+kubeadm init phase control-plane apiserver
+
+kubeadm init phase etcd local
+
+ss -ntlp | grep 6443
+kubectl get nodes
+
+systemctl status kubelet
+
+systemctl restart kubelet
+
+crictl ps -a | grep kube-apiserver
+
+crictl ps -a | grep etcd
