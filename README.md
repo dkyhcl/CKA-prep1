@@ -4,7 +4,7 @@ Local Kubernetes practice environment for Certified Kubernetes Administrator (CK
 
 ## Features
 
-- 🎯 10+ hands-on scenarios covering CKA domains
+- 🎯 23 hands-on scenarios covering CKA domains
 - ⏱️ Built-in timer for exam-style practice
 - ✅ Auto-grading for cluster state verification
 - 📝 Command submission tracking
@@ -85,14 +85,20 @@ cka-practice/
 ├── cleanup.sh               # Cluster cleanup
 ├── kind-cluster.yaml        # kind cluster config
 ├── scenarios/
-│   ├── 01-task.md          # Scenario tasks
+│   ├── 01-task.md          # Scenario task files (01-23)
 │   ├── 01-solution.md      # Reference solutions
 │   ├── 01-qa.md            # Q&A for scenario
 │   ├── general-qa.md       # General exam Q&A
-│   └── README-qa.md        # Q&A index
+│   ├── services-qa.md      # Cross-topic Q&A
+│   ├── storage-qa.md       # Storage-specific Q&A
+│   ├── README-qa.md        # Q&A index
+│   ├── networking/         # Topic note groups
+│   ├── storage/
+│   ├── troubleshooting/
+│   └── workloads/
 ├── manifests/
 │   └── metrics-server.yaml # Metrics server for cluster
-├── mock-exam-01.md         # Full practice exams
+├── mock-exam-01.md         # Full practice exams (01-03)
 ├── cka-commands.md         # Command cheat sheet
 ├── study-tracker.md        # 4-week study plan
 └── README.md
@@ -106,12 +112,25 @@ cka-practice/
 | 02 | Multi-Container Pods | 4m | Sidecar containers, shared volumes |
 | 03 | Node Maintenance | 5m | Cordon, drain, uncordon |
 | 04 | Network Policy | 6m | Traffic restrictions |
-| 05 | Storage | 8m | PV, PVC, static provisioning |
+| 05 | PersistentVolume | 5m | Static PV + PVC provisioning |
 | 06 | RBAC | 7m | Roles, RoleBindings |
-| 07 | Troubleshooting | 8m | Debug failing pods |
+| 07 | Troubleshooting | 5m | Debug CrashLoopBackOff |
 | 08 | Ingress | 6m | Host-based routing |
 | 09 | Scheduling | 6m | Affinity, taints, tolerations |
 | 10 | ConfigMap | 4m | Configuration as volume |
+| 11 | Jobs & CronJobs | 6m | Batch workloads, schedules |
+| 12 | etcd Backup & Restore | 8m | Disaster recovery |
+| 13 | Resource Limits | 5m | Requests and limits, QoS |
+| 14 | Init Containers | 6m | Pre-main setup containers |
+| 15 | PodDisruptionBudget | 7m | Availability during drains |
+| 16 | Probes | 6m | Liveness, readiness, startup |
+| 17 | HPA | 6m | Horizontal Pod Autoscaler |
+| 18 | StatefulSet | 8m | Ordered pods, headless service |
+| 19 | StorageClass | 5m | Dynamic provisioning |
+| 20 | ServiceAccounts | 6m | SA + RBAC integration |
+| 21 | CoreDNS | 6m | DNS service discovery |
+| 22 | Advanced NetworkPolicy | 7m | Default-deny, namespaces |
+| 23 | Rolling Update | 6m | maxSurge, maxUnavailable |
 
 ## Exam Tips
 
@@ -127,11 +146,11 @@ cka-practice/
 **Week 1**: Core concepts (scenarios 01-03)
 - Pods, Deployments, basic Services
 
-**Week 2**: Advanced workloads (scenarios 04-05)
-- Networking, storage
+**Week 2**: Advanced workloads (scenarios 04-10)
+- Networking, storage, scheduling, config
 
-**Week 3**: Cluster operations (scenarios 06-09)
-- RBAC, troubleshooting, scheduling
+**Week 3**: Cluster operations (scenarios 11-23)
+- Jobs, etcd, probes, StatefulSets, autoscaling
 
 **Week 4**: Mock exams + speed drills
 - Time yourself, focus on imperative commands
