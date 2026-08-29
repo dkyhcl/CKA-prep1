@@ -1,6 +1,36 @@
 # CKA Study Tracker
 
-## Progress Checklist
+## Scenario Progress
+
+| ID | Topic | Done |
+|----|-------|------|
+| 01 | Deployments | [x] |
+| 02 | Multi-container pods | [x] |
+| 03 | Node maintenance | [x] |
+| 04 | NetworkPolicy | [x] |
+| 05 | PersistentVolume | [ ] |
+| 06 | RBAC | [ ] |
+| 07 | Troubleshooting | [ ] |
+| 08 | Ingress | [x] |
+| 09 | Scheduling | [ ] |
+| 10 | ConfigMap | [ ] |
+| 11 | Jobs & CronJobs | [ ] |
+| 12 | etcd backup/restore | [ ] |
+| 13 | Resource limits | [ ] |
+| 14 | Init containers | [ ] |
+| 15 | PodDisruptionBudget | [ ] |
+| 16 | Probes | [ ] |
+| 17 | HPA | [ ] |
+| 18 | StatefulSet | [ ] |
+| 19 | StorageClass | [ ] |
+| 20 | ServiceAccounts | [ ] |
+| 21 | CoreDNS | [ ] |
+| 22 | Advanced NetworkPolicy | [ ] |
+| 23 | Rolling update | [ ] |
+
+Next up: **05 → 07 → 09 → 10**, then high-weight **12 (etcd), 06/20 (RBAC), 07 (troubleshoot)**.
+
+## Topic Checklist
 
 ### Week 1: Core Concepts (Day 1-7)
 - [ ] Cluster Architecture
@@ -20,7 +50,7 @@
   - [ ] Rollout history, rollback
   - [ ] Revision history
 
-**Practice**: `mock-exam-01.md` (Tasks 1-2)
+**Practice**: scenarios 01, 02, 13, 16, 23 · `mock-exam-01.md` (Tasks 1-2)
 
 ---
 
@@ -44,7 +74,7 @@
   - [ ] StorageClasses and dynamic provisioning
   - [ ] Access modes (RWO, RWX, ROX)
 
-**Practice**: `mock-exam-02.md` (Tasks 1, 4)
+**Practice**: scenarios 05, 10, 11, 18, 19 · `mock-exam-02.md` (Tasks 1, 4)
 
 ---
 
@@ -67,7 +97,7 @@
   - [ ] RoleBindings vs ClusterRoleBindings
   - [ ] `kubectl auth can-i`
 
-**Practice**: `mock-exam-03.md` (Tasks 2-4)
+**Practice**: scenarios 04, 06, 08, 09, 20, 21, 22 · `mock-exam-03.md` (Tasks 2-4)
 
 ---
 
@@ -88,7 +118,7 @@
   - [ ] Full 2-hour timed drills
   - [ ] Killercoda scenarios
 
-**Practice**: `mock-exam-01.md` (Task 3), `mock-exam-02.md` (Task 3), `mock-exam-03.md` (Task 1)
+**Practice**: scenarios 03, 07, 12, 14, 15, 17 · `mock-exam-01.md` (Task 3), `mock-exam-02.md` (Task 3), `mock-exam-03.md` (Task 1)
 
 ---
 

@@ -30,7 +30,7 @@ kind version
 
 ```bash
 # Clone this repo
-git clone https://github.com/YOUR_USERNAME/cka-practice.git
+git clone https://github.com/mquhuy/cka-practice.git
 cd cka-practice
 
 # Create cluster
@@ -92,10 +92,6 @@ cka-practice/
 │   ├── services-qa.md      # Cross-topic Q&A
 │   ├── storage-qa.md       # Storage-specific Q&A
 │   ├── README-qa.md        # Q&A index
-│   ├── networking/         # Topic note groups
-│   ├── storage/
-│   ├── troubleshooting/
-│   └── workloads/
 ├── manifests/
 │   └── metrics-server.yaml # Metrics server for cluster
 ├── mock-exam-01.md         # Full practice exams (01-03)

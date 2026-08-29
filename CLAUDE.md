@@ -25,7 +25,9 @@ CKA (Certified Kubernetes Administrator) exam preparation with local practice cl
 ├── 02-qa.md          # Scenario 02 Q&A
 ├── 03-qa.md          # Scenario 03 Q&A
 ├── 09-qa.md          # Scenario 09 Q&A
+├── XX-qa.md          # Create as questions come up (04-08, 10-23)
 ├── services-qa.md    # Cross-topic Q&A
+├── storage-qa.md     # Storage Q&A
 ├── general-qa.md     # Exam format, tips
 └── README-qa.md      # Index
 ```
@@ -69,12 +71,9 @@ Include code examples and commands where helpful.
 - **Timer:** `./timer.sh`
 
 ### Progress
-- ✅ Scenario 01: Deployments
-- ✅ Scenario 02: Multi-container pods
-- ✅ Scenario 03: Node maintenance
-- ✅ Scenario 04: NetworkPolicy
-- ✅ Scenario 08: Ingress
-- ⏳ Scenarios 05-07, 09-10: Pending
+- ✅ 01 Deployments, 02 Multi-container, 03 Node maintenance, 04 NetworkPolicy, 08 Ingress
+- ⏳ 05 PV/PVC, 06 RBAC, 07 Troubleshooting, 09 Scheduling, 10 ConfigMap
+- ⏳ 11–23: Jobs, etcd, resources, init, PDB, probes, HPA, StatefulSet, StorageClass, SA/RBAC, CoreDNS, Advanced NetPol, Rolling update
 
 ## Key Concepts Covered
 
